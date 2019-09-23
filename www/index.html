@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+<!--CSS-->
+<title>welcome page</title>
+<meta name="viewport" content="width = device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css"/>
+<!--jQuery Core Library -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--jQuery Mobile Library -->
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+ <script src ="cordova.js"></script>
+<!--linking calculator in js-->
+ <script>
+            
+	function calculate()
+       {
+        var n1 = parseFloat(document.getElementById('input1').value);
+        var n2 = parseFloat(document.getElementById('input2').value);
+             
+        var operator = document.getElementById('operators').value;
+                
+        		if(operator === '+')
+                {
+				    document.getElementById('ope').value=n1+"+"+n2;
+                    document.getElementById('result').value = n1+n2;
+                }
+                    
+                if(operator === '-')
+                {
+                    document.getElementById('ope').value=n1+"-"+n2;
+					document.getElementById('result').value = n1-n2;
+                }
+                
+                if(operator === '/')
+                {   document.getElementById('ope').value=n1+"/"+n2;
+                    document.getElementById('result').value = n1/n2;
+                }
+                
+                if(operator === '*')
+                {   document.getElementById('ope').value=n1+"*"+n2;
+                    document.getElementById('result').value = n1*n2;
+                }
+            }
+			        
+        </script>
+</head>
+
+
+<body>
+<!--homepage -->
+<div data-role="page" class="ui-btn-active" id="pagehome" data-theme="a">
+  <div data-role="header">
+     <h1>Simple Calculator</h1>
+	 <!--buttons -->
+  <div data-role="header">
+    <div data-role="navbar" class="ui-btn-active">
+      <ul>
+       <li><a href="#pagehome" data-transition="pop" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+       <li><a href="#pageCal" data-transition="pop" class="ui-btn  ui-icon-grid ui-btn-icon-top">Calculator</a></li>
+       <li><a href="#pagehelp" data-transition="pop" class="ui-btn ui-icon-info ui-btn-icon-top"> Help</a></li>
+      </ul>
+    </div>
+  </div>
+ </div>
+ <div>
+ <p>This is a jQuery mobile exercise which provides the user with a calculator for basic mathematical operations.</p>
+ </div>
+ <div data-role="footer">
+        <h1>Homework</h1>
+     </div>
+</div>
+
+
+  <!--Calculator page --> 
+  <div data-role="page" id="pageCal" data-theme="a">
+  <div data-role="header">
+     <h1>Simple Calculator</h1>
+	 <!--buttons -->
+  <div data-role="header">
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#pagehome" data-transition="pop" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+       <li><a href="#pageCal" data-transition="pop" class="ui-btn  ui-icon-grid ui-btn-icon-top">Calculator</a></li>
+       <li><a href="#pagehelp" data-transition="pop" class="ui-btn ui-icon-info ui-btn-icon-top"> Help</a></li>
+      </ul>
+     </div>
+   </div>    
+  </div>
+   <!--input1 -->
+  <div data-role="main" class="ui-content">  
+    <input type="text" name="textinput1" id="input1" >
+    <!--operations-->
+    <select id="operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+ 
+ <!--input2 -->
+    <input type="text" name="textinput2" id="input2">
+  
+   <!--Button calculate-->
+   <a href="#pageresult" onclick="calculate()" class="ui-btn">Calculate</a>
+   </div>
+     <div data-role="footer">
+     <h1>Homework</h1>
+  </div>
+ </div>
+</div>
+
+ 
+<!--result page-->
+ <div data-role="page" id="pageresult" data-theme="a">
+  <div data-role="header">
+     <h1>Result</h1>
+	 <!--buttons -->
+  <div data-role="header">
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#pagehome" data-transition="pop" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+       <li><a href="#pageCal" data-transition="pop" class="ui-btn  ui-icon-grid ui-btn-icon-top">Calculator</a></li>
+       <li><a href="#pagehelp" data-transition="pop" class="ui-btn ui-icon-info ui-btn-icon-top"> Help</a></li>
+      </ul>
+    </div>
+  </div>
+ </div>
+ <div>
+ <div data-role="main" class="ui-content"> 
+  <p>Operation:</p>
+  <input type="text" name="op" id="ope">
+  <p>Result:</p>
+  <input type="text" name="res" id="result">
+ </div>
+ <!--Output-->
+ </div>
+ <div data-role="footer">
+        <h1>Homework</h1>
+     </div>
+</div>
+  
+  
+
+  <!--Info page -->
+ <div data-role="page" data-dialog="true" id="pagehelp">
+  <div data-role="header">
+    <h1>More Info</h1>
+ </div>
+   <div data-role="main" class="ui-content">
+  <p>You have requested more information about the App!</p>
+  <a href = "#pagehome" data-transition="pop" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">Dismiss</a>
+</div>
+</div>
+
+</body>
+</html>
